@@ -7,7 +7,7 @@ class TabNavigator extends StatefulWidget {
 class _TabNavigatorState extends State<TabNavigator>{
     final _defaultColor=Colors.black26;
     final _activeColor=Colors.lightGreen;
-    int _currentIndex=0;
+    int _currentIndex=1;
     final PageController _controller=PageController(
       initialPage: 0,
     );

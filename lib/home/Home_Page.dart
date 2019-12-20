@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:myproject/home/Boy_Page.dart';
 import 'package:myproject/home_banner/home_banner.dart';
 import 'package:myproject/uitjs/colors.dart';
+
+import 'Girs_Page.dart';
 class MyHomePage extends StatefulWidget{
 
   @override
@@ -96,9 +98,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
             Divider(height: 1, color: MyColors.dividerDarkColor),
             Expanded(
               child: TabBarView(controller:_tabController,children: [
-               BoyPage(),
                 Text('123'),
-                Text('123'),
+                BoyPage(),
+                GrirsPage(),
                 Text('123'),
               ]),
             )

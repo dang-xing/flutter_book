@@ -17,7 +17,6 @@ class _HomeBannerState extends State<HomeBanner>{
     });
   }
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: Image.asset(
         "images/launch_image.png",
