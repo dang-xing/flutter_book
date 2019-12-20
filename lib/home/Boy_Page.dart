@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myproject/model/body_model.dart';
@@ -23,7 +22,19 @@ class _BoyPage extends State<BoyPage>{
     super.initState();
     fetchPost().then((BodyModel value){
       item=value.data.xList;
-      _list=value.data.xList[0].recommendBookInfoVo;
+      for(var i=0;i<item.length;i++){
+        _list.addAll(value.data.xList[i].recommendBookInfoVo);
+      }
+      _list.forEach((item)=>{
+        print(item.authorName)
+      });
+
+      setState(() {
+        item=value.data.xList;
+        _list=_list;
+
+      });
+    
 
     });
   }
@@ -100,5 +111,6 @@ class _BoyPage extends State<BoyPage>{
           );
     });
   }
+
 
 }
