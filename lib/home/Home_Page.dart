@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
             Divider(height: 1, color: MyColors.dividerDarkColor),
             Expanded(
               child: TabBarView(controller:_tabController,children: [
-                Text('123'),
+                BoyPage(),
                 BoyPage(),
                 GrirsPage(),
                 Text('123'),

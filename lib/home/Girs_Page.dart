@@ -60,14 +60,56 @@ class _GrirsPage extends State<GrirsPage>{
           ),
         );
       }
-      return InkWell(
-        child: Container(
+      return  InkWell(
+        child:Container(
+          padding: EdgeInsets.fromLTRB(15, 12, 15, 12),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('123')
+              Image.network('',width: 77,height: 99,),
+              SizedBox(width: 12,),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment:CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text('',style: TextStyle(color: MyColors.textBlack3,fontSize: 16),),
+                    SizedBox(height: 6,),
+                    Text('',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style:TextStyle(color:MyColors.textBlack9,fontSize: 13,height: 1.5,),
+                    ),
+                    SizedBox(height: 6,),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Expanded(
+                          child: Text(
+                            '',
+                            style: TextStyle(
+                              color: MyColors.textBlack9,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.fromLTRB(8, 2, 8, 2),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: MyColors.textBlack9,width: 0.8),
+                            borderRadius: BorderRadius.all(new Radius.circular(3.0)),
+                          ),
+                          child: Text('',style: TextStyle(fontSize: 12,color: MyColors.textBlack9),),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              )
             ],
           ),
-        ),
+        ) ,
       );
     });
   }
