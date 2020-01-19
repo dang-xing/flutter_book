@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myproject/home/Boy_Page.dart';
+import 'package:myproject/home/Search_List.dart';
 import 'package:myproject/home_banner/home_banner.dart';
 import 'package:myproject/uitjs/colors.dart';
 
@@ -28,7 +29,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
   }
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body:SafeArea( //解决不规则屏幕问题
         child: Column(  //垂直列布局
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
                   flex: 1,
                   child: GestureDetector( //手势检测控件
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeBanner()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchList()));
                     },
                     child: Container(
                       margin: EdgeInsets.fromLTRB(12, 5, 0,0), //控制上线左右外边距
@@ -98,10 +98,10 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
             Divider(height: 1, color: MyColors.dividerDarkColor),
             Expanded(
               child: TabBarView(controller:_tabController,children: [
-                BoyPage(),
-                BoyPage(),
-                GrirsPage(),
-                Text('123'),
+                BoyPage('male'),
+                BoyPage('male'),
+                BoyPage('female'),
+                BoyPage('press'),
               ]),
             )
           ],
