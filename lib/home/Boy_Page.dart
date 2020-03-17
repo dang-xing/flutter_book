@@ -10,9 +10,6 @@ import 'package:myproject/widget/Local_Nav.dart';
 class BoyPage extends StatefulWidget{
   final String type;
   BoyPage(this.type);
-
-
-
   @override
   _BoyPage createState()=>_BoyPage();
 }
