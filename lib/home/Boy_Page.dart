@@ -5,6 +5,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:myproject/model/book_home.dart';
 import 'package:http/http.dart' as http;
 import 'package:myproject/uitjs/colors.dart';
+import 'package:myproject/widget/Book_Item.dart';
 import 'package:myproject/widget/Book_List.dart';
 import 'package:myproject/widget/Local_Nav.dart';
 class BoyPage extends StatefulWidget{
@@ -19,7 +20,9 @@ class _BoyPage extends State<BoyPage>{
   List<BookHomeDataBookSingleBookConfig> bookImg=[];
   List<BookHomeDataHomeRecommand> boyData=[];
   List<BookHomeDataHomeRecommandBookConfig> boyDataList=[];
+  List<BookHomeDataEverybodyLook> bodyLooks=[];
   var imgUrl='';
+
   Future<BookHomeEntity> fetchPost() async{
     final response=await http.get('http://api.book.lieying.cn/Book/homeBookNew?gender='+this.widget.type);
     final result=json.decode(response.body);
@@ -30,13 +33,13 @@ class _BoyPage extends State<BoyPage>{
   void initState() {
     super.initState();
     fetchPost().then((BookHomeEntity value){
-      bookImg=value.data.bookSingle[0].bookConfig;
       setState(() {
         bookConfig=value.data.bannerList[0].bookConfig;
         bookIcon=value.data.icon[0].bookConfig;
         bookImg=value.data.bookSingle[0].bookConfig;
         boyDataList=value.data.homeRecommend[0].bookConfig;
         boyData=value.data.homeRecommend;
+        bodyLooks=value.data.everybodyLooks;
         bookImg.forEach((item)=>{
           imgUrl=item.imageUrl
         });
@@ -53,22 +56,8 @@ class _BoyPage extends State<BoyPage>{
           _banner,
           LocalNav(bookIcon: bookIcon),
           BookList(boyData: boyData,boyDataList: boyDataList,),
-          GestureDetector(
-            onTap: ()=>{
-              print('1')
-            },
-            child:Container(
-              height: 160,
-              padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
-              child: Container(
-                decoration: BoxDecoration(
-                    image: new DecorationImage(image: new NetworkImage(imgUrl),fit: BoxFit.cover),
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                ),
-              ),
-            ),
-          ),
 
+          BookItem(bodyLooks:bodyLooks),
         ],
     );
   }

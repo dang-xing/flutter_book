@@ -3,10 +3,7 @@ import 'package:myproject/model/book_home.dart';
 import 'package:myproject/uitjs/colors.dart';
 class BoyClss extends StatelessWidget{
   final List<BookHomeDataHotCategory> BoyHotBook;
-
   const BoyClss({Key key, this.BoyHotBook}) : super(key: key);
-
-  @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:myproject/home/Home_Page.dart';
 import 'package:myproject/uitjs/colors.dart';
-import 'home_banner/home_banner.dart';
 void main() {
   runApp(MyApp());
   //设置状态栏透明
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: MyColors.white,
         primaryColor: MyColors.primary,
       ),
-      home: HomeBanner(),
+      home:MyHomePage(),
     );
   }
 }

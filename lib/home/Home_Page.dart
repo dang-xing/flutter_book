@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:myproject/home/Boy_Page.dart';
 import 'package:myproject/home/Search_List.dart';
 import 'package:myproject/uitjs/colors.dart';
+
+import 'Book_Detail.dart';
 class MyHomePage extends StatefulWidget{
 
   @override
@@ -98,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
                 BoyPage('male'),
                 BoyPage('male'),
                 BoyPage('female'),
-                BoyPage('press'),
+                BookDetail(),
               ]),
             )
           ],

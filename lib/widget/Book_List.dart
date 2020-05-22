@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myproject/home/Book_Detail.dart';
 import 'package:myproject/uitjs/colors.dart';
 import 'package:myproject/model/book_home.dart';
-
 class BookList extends StatelessWidget {
   final List<BookHomeDataHomeRecommand> boyData;
   final List<BookHomeDataHomeRecommandBookConfig> boyDataList;
@@ -34,14 +34,16 @@ class BookList extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          GestureDetector(
+          InkWell(
             child: firstBook(),
-            onTap: () => {print(1)},
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>BookDetail()));
+            },
           ),
           SizedBox(
             height: 15,
           ),
-          items(context),
+          items(context)
         ],
       ),
     );
